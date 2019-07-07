@@ -1,0 +1,115 @@
+package 'ietf-lmap-control'
+
+config 'agent'
+  option 'agent-id' 'cb9e3ce7-d0b0-4233-a54d-1ea1e1c7dba0' //random GUID
+  option 'group-id' '42'
+  option 'measurement-point' 'a'
+  option 'report-agent-id' '0'
+  option 'report-group-id' '1'
+  option 'report-measurement-point' '1'
+  option 'controller-timeout' '120'
+  option 'last-started' '1985-04-12T23:20:50.52Z'
+
+config 'capabilities'
+  option 'version' '1.1'
+  list 'tag' 'tag-value'
+  list 'task-names' 'Ping'
+  list 'task-names' 'tracert'
+
+config 'task'
+  option 'name' 'Ping'
+  list 'function' 'uri-value'
+  option 'version' '1.1'
+  option 'program' 'ping'
+  list 'tag' 'tag-value'
+
+config 'task'
+  option 'name' 'tracert'
+  list 'function' 'uri-value-2'
+  option 'version' '1.2'
+  option 'program' 'traceroute'
+
+config 'function'
+  option 'uri' 'uri-value'
+  option 'role' 'role-value'
+
+config 'function'
+  option 'uri' 'uri-value-2'
+  option 'role' 'role-value-2'
+
+config 'schedules'
+  list 'schedule-names' 'ping-schedule'
+
+config 'schedule'
+  option 'name' 'ping-schedule'
+  option 'start' 'start-event-ref-key'
+  option 'end' 'end-event-ref-key'
+  option 'duration' '32' //Alternative to the above
+  option 'execution-mode' '1' //  1 - sequential, 2 - parallel, 3 - pipelined
+  list 'tag' 'tag-value'
+  list 'suppression-tag' 'suppression-tag-value'
+  option 'state' '1'//  1 - enabled, 2 - disabled, 3 - running, 4 - suppressed
+  option 'storage' '7259091746'
+  option 'invocations' '42'
+  option 'suppressions' '12'
+  option 'overlaps' '2'
+  option 'failures' '0'
+  option 'last-invocation' '1990-12-31T15:59:12-08:00'
+  list 'actions' 'action-name'
+
+config 'action'
+  option 'name' 'action-name'
+  option 'task' 'task-ref-key'
+  list 'destinations' 'ping-schedule'
+  list 'tag' 'tag-value'
+  list 'suppression-tag' 'suppression-tag-value'
+  option 'state' '1' //same as schedule state option
+  option 'storage' '7259091746'
+  option 'invocations' '42'
+  option 'suppressions' '12'
+  option 'overlaps' '2'
+  option 'failures' '0'
+  option 'last-invocation' '1990-12-31T15:59:12-08:00'
+  option 'last-completion' '1990-12-31T16:04:49-08:00'
+  option 'last-status' '0'
+  option 'last-message' 'Pinged'
+  option 'last-failed-completion' ''
+  option 'last-failed-status' ''
+  option 'last-failed-message' ''
+
+config 'suppressions'
+  list 'suppression-names' 'suppression-name-value'
+  option 'start' 'event-ref-key'
+  option 'end' 'end-event-ref-key'
+  list 'match' 'match-pattern'
+  option 'stop-running' '0'
+  option 'state' '1'
+
+config 'events'
+  list 'event-names' 'event-ping'
+
+config 'event'
+  option 'name' 'event-ping'
+  option 'random-spread' '32'
+  option 'cycle-interval' '900'
+  option 'event-type' '0' //0 - periodic, 1 - calendar, 2 - one-off, 3 - immediate, 4 - startup, 5 - controller-lost, 6 - controller-connected
+  //Depending on the event-type defined, the following options will be used:
+  //0 - periodic
+  option 'interval' '900'
+  option 'start' 'start-event-ref-key'
+  option 'end' 'end-event-ref-key'
+  //1 - calendar
+  list 'month' '1'
+  list 'month' '2'
+  list 'day-of-month' '*'
+  list 'day-of-week' '*'
+  list 'hour' '12'
+  list 'minute' '00'
+  list 'second' '59'
+  option 'timezone-offset' 'Z'
+  option 'start' 'start-event-ref-key'
+  option 'end' 'end-event-ref-key'
+  //2 - one-off
+  option 'time' '1990-12-31T15:59:12-08:00'
+  //the immediate, startup, controller-lost, and controller-connected event types all don't require any other options to run
+  //according to the behavior specified

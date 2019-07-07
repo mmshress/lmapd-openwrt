@@ -1,0 +1,959 @@
+Package: openssh-sftp-server
+Version: 8.0p1-1
+Depends: libc, libopenssl1.1, zlib
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1556037064
+
+Package: liblucihttp0
+Version: 2019-01-24-1afbdcc3-1
+Depends: libc
+Provides: liblucihttp
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037024
+Auto-Installed: yes
+
+Package: libc
+Version: 1.1.21-1
+Depends: libgcc1
+Status: install hold installed
+Essential: yes
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: mkf2fs
+Version: 1.12.0-2
+Depends: libc, libf2fs6
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: opkg
+Version: 2019-01-31-d4ba162b-1
+Depends: libc, uclient-fetch, libpthread, libubox20170601
+Status: install user installed
+Essential: yes
+Architecture: x86_64
+Conffiles:
+ /etc/opkg.conf f38c19f696ea87c0b30eb5bfeb8657237f4625e1a749c58b99f01595edfb6446
+ /etc/opkg/customfeeds.conf 61d1f3aa62fe977614ed0c2f0ad3b2ee2f7b451bfb34812071d86d31a4d43d4a
+Installed-Time: 1551906176
+
+Package: luci-app-opkg
+Version: git-19.112.62528-f223a76-1
+Depends: libc, opkg
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: check
+Version: 0.12.0-1
+Depends: libc, libpthread, librt
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1555516571
+
+Package: libpthread
+Version: 1.1.21-1
+Depends: libgcc1
+Status: install hold installed
+Essential: yes
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: ubus
+Version: 2018-10-06-221ce7e7-1
+Depends: libc, libubus20170705, libblobmsg-json, ubusd
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libuci20130104
+Version: 2018-08-11-4c8b4d6e-2
+Depends: libc, libubox20170601
+Provides: libuci
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: rpcd
+Version: 2018-11-28-3aa81d0d-1
+Depends: libc, libubus20170705, libubox20170601, libuci20130104, libblobmsg-json
+Status: install ok installed
+Architecture: x86_64
+Conffiles:
+ /etc/config/rpcd 81a24774226d42c6ea53b531992335cc910094a7e17f80a803e680e2eededd4f
+Installed-Time: 1556037023
+Auto-Installed: yes
+
+Package: busybox
+Version: 1.30.1-1
+Depends: libc
+Status: install user installed
+Essential: yes
+Architecture: x86_64
+Installed-Time: 1551906176
+Alternatives: 100:/usr/bin/find:/bin/busybox, 100:/usr/bin/flock:/bin/busybox, 100:/usr/bin/free:/bin/busybox, 100:/sbin/ip:/bin/busybox, 100:/bin/kill:/bin/busybox, 100:/usr/bin/pgrep:/bin/busybox, 100:/bin/ps:/bin/busybox, 100:/usr/bin/top:/bin/busybox, 100:/usr/bin/uptime:/bin/busybox, 100:/usr/bin/xargs:/bin/busybox
+
+Package: luci-lib-ip
+Version: git-19.112.62528-f223a76-1
+Depends: libc, liblua5.1.5, libnl-tiny
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037023
+Auto-Installed: yes
+
+Package: libubus-lua
+Version: 2018-10-06-221ce7e7-1
+Depends: libc, libubus20170705, liblua5.1.5
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037023
+Auto-Installed: yes
+
+Package: kmod-nf-reject6
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libiwinfo-lua
+Version: 2019-03-28-c2cfe9d9-1
+Depends: libc, libiwinfo20181126, liblua5.1.5
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037024
+Auto-Installed: yes
+
+Package: bnx2-firmware
+Version: 2018-12-16-211de167-1
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: luci-mod-system
+Version: git-19.112.62528-f223a76-1
+Depends: libc, luci-base
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: kmod-nf-flow
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-nf-conntrack
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-lib-crc-ccitt
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: r8169-firmware
+Version: 2018-12-16-211de167-1
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: luci-theme-bootstrap
+Version: git-19.112.62528-f223a76-1
+Depends: libc
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: kmod-pppoe
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-ppp, kmod-pppox
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libuuid1
+Version: 2.33-2
+Depends: libc, librt
+Provides: libuuid
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: kmod-pppox
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-ppp
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-ipt-conntrack
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-ipt-core, kmod-nf-conntrack
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-nf-reject
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: base-files
+Version: 197-r9544-457de5a
+Depends: libc, netifd, procd, jsonfilter, usign, openwrt-keyring, fstools, fwtool
+Status: install user installed
+Architecture: x86_64
+Conffiles:
+ /etc/ethers 56bda09b0aa3d1e88107bfa8a1c6e4449d5c1f47245dc1c4037ff9b5db163b7c
+ /etc/group cc81720c9b4bb67c723fcf7dc51823a9e6937c4a3e6302db60285ffebfde08f7
+ /etc/hosts c1a978d90673437b35fa9494e0a54294062c152bb653d490b718052ab88447fd
+ /etc/inittab f74069b98072f928523990b9868eb6b268b574cbc3e4e8411c6397ea5ff30e4a
+ /etc/iproute2/rt_protos a0712b1771c8d5f3e0dcf9a6314880e71aa3498ea1ae873535bdfcf70d814061
+ /etc/iproute2/rt_tables f771e2b81741f70e3faf658dc504f0dc048672fc8caaadea15e46c35da3de8f8
+ /etc/passwd 6a451aa33393f47ade89b8bce4d9711818c2630394c3967265ffed276bb25a55
+ /etc/profile 9e36315e247bae64a6027c973cb421ff6fd76b8eae5adbac824cc8ad63f5a996
+ /etc/protocols 7d551355d5540b07b9d86e623cbbc4abecbb94d2a662b3afcc917940eb0e3d52
+ /etc/rc.local 515018aa94eb4937dade12dc0d69890b352af35a5ab5fb8203f9ed10990ac06f
+ /etc/services 754ccc71ca347bc79ac4c45139d416b7cf1e65a919dad1db15613a216cd6b9cc
+ /etc/shadow ccbbfeee2dd560403fea13f7f431ebd21d9bb4b3d41e48e892013fa451f91cc4
+ /etc/shells 8b35ce73c18161a7d7ed16fa244410993bd031515260e3e0c11749047df48d0a
+ /etc/sysctl.conf c02fe88dc055a1eaee9e7cb631760a3a5a9cea55610b42aa45196838c6f1a55e
+ /etc/sysupgrade.conf 9e87b05fe2f12c84d1c465b396322748479f64bc40e5bab061887f0bd95020a6
+Installed-Time: 1551906176
+
+Package: kmod-nf-nat
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-nf-conntrack
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-input-core
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: partx-utils
+Version: 2.33-2
+Depends: libc, libblkid1, libsmartcols1
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: netifd
+Version: 2019-01-31-5cd7215a-1
+Depends: libc, libuci20130104, libnl-tiny, libubus20170705, ubus, ubusd, jshn, libubox20170601
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libf2fs6
+Version: 1.12.0-2
+Depends: libc, libuuid1
+Provides: libf2fs
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libsmartcols1
+Version: 2.33-2
+Depends: libc, librt
+Provides: libsmartcols
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-r8169
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-mii, r8169-firmware
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-mii
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: dnsmasq
+Version: 2.80-11
+Depends: libc, libubus20170705
+Status: install user installed
+Architecture: x86_64
+Conffiles:
+ /etc/config/dhcp e90f7b32e9c4e8f526a435607f792aa0439dd69fabfe1038eed5b27efc616be0
+ /etc/dnsmasq.conf 1e6ab19c1ae5e70d609ac7b6246541d52042e4dee1892f825266507ef52d7dfd
+Installed-Time: 1551906176
+
+Package: procd
+Version: 2018-12-27-e2b055ed-1
+Depends: libc, ubusd, ubus, libjson-script, ubox, libubox20170601, libubus20170705
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libuclient20160123
+Version: 2018-11-24-3ba74ebc-1
+Depends: libc, libubox20170601
+Provides: libuclient
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: ubusd
+Version: 2018-10-06-221ce7e7-1
+Depends: libc, libubox20170601, libblobmsg-json
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libubox20170601
+Version: 2019-02-27-eeef7b50-1
+Depends: libc
+Provides: libubox
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: luci-mod-status
+Version: git-19.112.62528-f223a76-1
+Depends: libc, luci-base, libiwinfo20181126, libiwinfo-lua
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037024
+Auto-Installed: yes
+
+Package: kmod-i2c-core
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libxtables12
+Version: 1.8.2-3
+Depends: libc
+Provides: libxtables
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libiwinfo20181126
+Version: 2019-03-28-c2cfe9d9-1
+Depends: libc, libnl-tiny, libuci20130104, libubus20170705
+Provides: libiwinfo
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037024
+Auto-Installed: yes
+
+Package: firewall
+Version: 2019-01-02-70f8785b-2
+Depends: libc, libubox20170601, libubus20170705, libuci20130104, libip4tc0, libip6tc0, libxtables12, kmod-ipt-core, kmod-ipt-conntrack, kmod-nf-conntrack6, kmod-ipt-nat
+Status: install user installed
+Architecture: x86_64
+Conffiles:
+ /etc/config/firewall 303d858071dfcf1d1e8593168eb9c582a2c774211f23cef4bf7c85e4060a5e8c
+ /etc/firewall.user bd68324966481011f5e36570258ad97dd422655c16f3119d48325ed8459de510
+Installed-Time: 1551906176
+
+Package: libxml2
+Version: 2.9.9-1
+Depends: libc, libpthread, zlib
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1555516641
+
+Package: luci-app-firewall
+Version: git-19.112.62528-f223a76-1
+Depends: libc, firewall
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: kmod-nf-ipt
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libblkid1
+Version: 2.33-2
+Depends: libc, libuuid1
+Provides: libblkid
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: kmod-ip6tables
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-nf-reject6, kmod-nf-ipt6, kmod-ipt-core
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: odhcp6c
+Version: 2019-01-11-d2e247d8-16
+Depends: libc, libubox20170601
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: fstools
+Version: 2018-12-28-af93f4b8-4
+Depends: libc, ubox
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: uclient-fetch
+Version: 2018-11-24-3ba74ebc-1
+Depends: libc, libuclient20160123
+Provides: wget
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Alternatives: 200:/usr/bin/wget:/bin/uclient-fetch
+
+Package: uci
+Version: 2018-08-11-4c8b4d6e-2
+Depends: libc, libuci20130104
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: lua
+Version: 5.1.5-2
+Depends: libc, liblua5.1.5
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037023
+Auto-Installed: yes
+
+Package: libip4tc0
+Version: 1.8.2-3
+Depends: libc, libxtables12
+Provides: libip4tc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: dropbear
+Version: 2017.75-9
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Conffiles:
+ /etc/dropbear/dropbear_rsa_host_key e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+ /etc/config/dropbear 0198dbc97b5a9aac76a5c6233684571ccdcc91fcb735e91c36d2b06a98158589
+Installed-Time: 1551906176
+Alternatives: 100:/usr/bin/ssh:/usr/sbin/dropbear, 100:/usr/bin/scp:/usr/sbin/dropbear
+
+Package: kmod-hwmon-core
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: mtd
+Version: 24
+Depends: libc, libubox20170601
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: odhcpd-ipv6only
+Version: 2019-02-27-16c5b6c9-3
+Depends: libc, libubox20170601, libuci20130104, libubus20170705, libnl-tiny
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: luci-proto-ppp
+Version: git-19.112.62528-f223a76-1
+Depends: libc
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: libcomerr0
+Version: 1.44.5-1
+Depends: libc, libuuid1
+Provides: libcomerr
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: luci-mod-admin-full
+Version: git-19.112.62528-f223a76-1
+Depends: libc, luci-base, luci-mod-status, luci-mod-system, luci-mod-network
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: ppp
+Version: 2.4.7.git-2018-06-23-1
+Depends: libc, kmod-ppp
+Status: install user installed
+Architecture: x86_64
+Conffiles:
+ /etc/ppp/chap-secrets 6981fa176a79f8c12be5826c421b16253a616747018ba7e76752a9d36d1d51d4
+ /etc/ppp/filter 579583b318e0cff706ffc134620b42d3fbce8fc31aeb0ad7eea1cc859868e902
+ /etc/ppp/options 01f7358a5528be037dde329a2ecfb7a63382aababf21d4f5bc085f5acef95133
+Installed-Time: 1551906176
+
+Package: luci-base
+Version: f138fc93-1
+Depends: libc, lua, luci-lib-nixio, luci-lib-ip, rpcd, libubus-lua, luci-lib-jsonc, liblucihttp-lua
+Status: install ok installed
+Architecture: x86_64
+Conffiles:
+ /etc/luci-uploads/.placeholder e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+ /etc/config/luci 5a7c058ee80817cbda78401fa5e13eb2c0580d4aca9e4bf00df12f8d558aec29
+ /etc/config/ucitrack 3480e8ca8e224537c9d95e7678b05123ff7b06a2a0b3d1000032a04576d90381
+Installed-Time: 1556037024
+Auto-Installed: yes
+
+Package: logd
+Version: 2018-12-18-876c7f5b-1
+Depends: libc, libubox20170601, libubus20170705, libblobmsg-json
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: librt
+Version: 1.1.21-1
+Depends: libpthread
+Status: install hold installed
+Essential: yes
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libopenssl1.1
+Version: 1.1.1b-5
+Depends: libc
+Provides: libopenssl
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037064
+Auto-Installed: yes
+
+Package: libjson-script
+Version: 2019-02-27-eeef7b50-1
+Depends: libc, libubox20170601
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: luci-proto-ipv6
+Version: git-19.112.62528-f223a76-1
+Depends: libc
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: libblobmsg-json
+Version: 2019-02-27-eeef7b50-1
+Depends: libc, libjson-c2, libubox20170601
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libip6tc0
+Version: 1.8.2-3
+Depends: libc, libxtables12
+Provides: libip6tc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: iptables
+Version: 1.8.2-3
+Depends: libc, kmod-ipt-core, libip4tc0, libip6tc0, libxtables12
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: openwrt-keyring
+Version: 2018-05-18-103a32e9-1
+Depends: libc
+Provides: lede-keyring
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libext2fs2
+Version: 1.44.5-1
+Depends: libc, libuuid1, libblkid1, libss2, libcomerr0
+Provides: libext2fs
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: jshn
+Version: 2019-02-27-eeef7b50-1
+Depends: libc, libjson-c2, libubox20170601, libblobmsg-json
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: kmod-ipt-core
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-nf-reject, kmod-nf-ipt
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: e2fsprogs
+Version: 1.44.5-1
+Depends: libc, libuuid1, libext2fs2
+Status: install user installed
+Architecture: x86_64
+Conffiles:
+ /etc/e2fsck.conf dece11e2b15f487d7d2bf9f96abe2eaaf9cd33f02d7b9725b9116023d7786cac
+Installed-Time: 1551906176
+
+Package: kmod-e1000
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-ppp
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-lib-crc-ccitt, kmod-slhc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-pps
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libss2
+Version: 1.44.5-1
+Depends: libc, libcomerr0
+Provides: libss
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libjson-c2
+Version: 0.12.1-3
+Depends: libc
+Provides: libjson-c
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: uhttpd
+Version: 2018-11-28-cdfc902a-2
+Depends: libc, libubox20170601, libblobmsg-json, libjson-script
+Status: install ok installed
+Architecture: x86_64
+Conffiles:
+ /etc/config/uhttpd ccb1b37c12734b273e6046e24a50b2af3a82274f4463ae68c9dabf7aed932099
+Installed-Time: 1556037022
+Auto-Installed: yes
+
+Package: kmod-nf-conntrack
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1)
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: usign
+Version: 2015-07-04-ef641914-1
+Depends: libc, libubox20170601
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: ip6tables
+Version: 1.8.2-3
+Depends: libc, kmod-ip6tables, iptables
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: liblua5.1.5
+Version: 5.1.5-2
+Depends: libc
+Provides: liblua
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037023
+Auto-Installed: yes
+
+Package: zlib
+Version: 1.2.11-2
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1555516636
+
+Package: kmod-nf-ipt6
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-nf-ipt
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: luci-lib-nixio
+Version: git-19.112.62528-f223a76-1
+Depends: libc, liblua5.1.5
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037023
+Auto-Installed: yes
+
+Package: libubus20170705
+Version: 2018-10-06-221ce7e7-1
+Depends: libc, libubox20170601
+Provides: libubus
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: liblucihttp-lua
+Version: 2019-01-24-1afbdcc3-1
+Depends: libc, liblucihttp0, liblua5.1.5
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037024
+Auto-Installed: yes
+
+Package: luci-lib-jsonc
+Version: git-19.112.62528-f223a76-1
+Depends: libc, liblua5.1.5, libjson-c2
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037023
+Auto-Installed: yes
+
+Package: kmod-ptp
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-pps
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: luci
+Version: git-19.112.62528-f223a76-1
+Depends: libc, uhttpd, luci-mod-admin-full, luci-theme-bootstrap, luci-app-firewall, luci-app-opkg, luci-proto-ppp, libiwinfo-lua, luci-proto-ipv6, rpcd-mod-rrdns
+Status: install user installed
+Architecture: all
+Installed-Time: 1556037026
+
+Package: kmod-nf-conntrack6
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-nf-conntrack
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libgcc1
+Version: 7.4.0-1
+Provides: libgcc
+Status: install hold installed
+Essential: yes
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: ubox
+Version: 2018-12-18-876c7f5b-1
+Depends: libc, libubox20170601, ubusd, ubus, libubus20170705, libuci20130104
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: kernel
+Version: 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: libnl-tiny
+Version: 0.1-5
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: kmod-e1000e
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-ptp
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: libevent2-6
+Version: 2.1.8-3
+Depends: libc
+Provides: libevent2
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1555516564
+
+Package: luci-mod-network
+Version: git-19.112.62528-f223a76-1
+Depends: libc, luci-base, libiwinfo-lua
+Status: install ok installed
+Architecture: all
+Installed-Time: 1556037025
+Auto-Installed: yes
+
+Package: kmod-button-hotplug
+Version: 4.14.104-3
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-input-core
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: fwtool
+Version: 1
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: simet-lmapd
+Version: 0.1.2-1
+Depends: libc, libjson-c2, libevent2-6, check
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1555516644
+
+Package: jsonfilter
+Version: 2018-02-04-c7e938d6-1
+Depends: libc, libubox20170601, libjson-c2
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+Auto-Installed: yes
+
+Package: kmod-igb
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-i2c-core, kmod-i2c-algo-bit, kmod-ptp, kmod-hwmon-core
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-ipt-offload
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-ipt-core, kmod-nf-flow
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-i2c-algo-bit
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-i2c-core
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-bnx2
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), bnx2-firmware
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: vsftpd
+Version: 3.0.3-3
+Depends: libc
+Status: install user installed
+Architecture: x86_64
+Conffiles:
+ /etc/vsftpd.conf dac7bbd200e5282e2f76057c9778e3695499e22b54752c12d8a210beda71cb7d
+Installed-Time: 1556039005
+
+Package: kmod-slhc
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-lib-crc-ccitt
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: rpcd-mod-rrdns
+Version: 20170710
+Depends: libc, rpcd, libubox20170601, libubus20170705
+Status: install ok installed
+Architecture: x86_64
+Installed-Time: 1556037026
+Auto-Installed: yes
+
+Package: ppp-mod-pppoe
+Version: 2.4.7.git-2018-06-23-1
+Depends: libc, kmod-pppoe
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+
+Package: kmod-ipt-nat
+Version: 4.14.104-1
+Depends: kernel (= 4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-ipt-core, kmod-nf-nat
+Status: install user installed
+Architecture: x86_64
+Installed-Time: 1551906176
+

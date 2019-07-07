@@ -1,0 +1,35 @@
+<%+header%>
+<%
+  function read_config_json()
+    local config_file = nixio.open("/lmapd-config.json", "r")
+    local json_buffer = config_file:read(config_file:stat("size"))
+    local parsed_json = luci.jsonc.parse(json_buffer)
+    return parsed_json
+  end
+
+  function populate_events_table()
+    parsed_json = read_config_json()
+    events_table = parsed_json["ietf-lmap-control:lmap"]["events"]["event"]
+  end
+
+  function add_event_row()
+    %>
+    <div id = "table"><%
+      count = 1
+      for k, val in pairs(events_table) do%>
+        <div id = "tr">
+          <div id = "td left" width = "100%"> Name </div>
+          <div id = "td left" width = "100%"><input type = "text" id = "event_name_<%=count%>" value ="<%=val["name"]%>"></div>
+        </div>
+      <%
+      count = count + 1
+      end %>
+    </div>
+  <% end
+  populate_events_table()
+  add_event_row()
+%>
+<div id="cbi-section" width = "100%">
+  
+</div>
+<%+footer%>

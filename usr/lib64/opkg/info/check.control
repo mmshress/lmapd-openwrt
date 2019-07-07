@@ -1,0 +1,16 @@
+Package: check
+Version: 0.12.0-1
+Depends: libc, libpthread, librt
+Source: feeds/packages/libs/check
+SourceName: check
+License: LGPL-2.1+
+LicenseFiles: COPYING.LESSER
+Section: libs
+Maintainer: Eduardo Abinader <eduardoabinader@gmail.com>
+Architecture: x86_64
+Installed-Size: 15303
+Description:  Check features a simple interface for defining unit tests, putting little in
+ the way of the developer. Tests are run in a separate address space, so Check
+ can catch both assertion failures and code errors that cause segmentation
+ faults or other signals. The output from unit tests can be used within source
+ code editors and IDEs.

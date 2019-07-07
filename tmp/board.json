@@ -1,0 +1,12 @@
+{
+	"model": {
+		"id": "innotek-gmbh-virtualbox",
+		"name": "innotek GmbH VirtualBox"
+	},
+	"network": {
+		"lan": {
+			"ifname": "eth0",
+			"protocol": "static"
+		}
+	}
+}

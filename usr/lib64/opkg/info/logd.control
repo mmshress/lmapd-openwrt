@@ -1,0 +1,11 @@
+Package: logd
+Version: 2018-12-18-876c7f5b-1
+Depends: libc, libubox20170601, libubus20170705, libblobmsg-json
+Source: package/system/ubox
+SourceName: logd
+License: GPL-2.0
+Section: base
+Maintainer: John Crispin <john@phrozen.org>
+Architecture: x86_64
+Installed-Size: 10095
+Description:  OpenWrt system log implementation

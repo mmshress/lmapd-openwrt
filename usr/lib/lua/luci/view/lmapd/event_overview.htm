@@ -1,0 +1,11 @@
+<div id="cbi-section-node">
+  <div class = "table">
+    <%
+      local uci = require "uci".cursor()
+      local events_list = uci:get("lmapd", "events", "event_names")
+      for i, event_name in pairs(events_list) do
+        
+      end
+    %>
+  </div>
+</div>

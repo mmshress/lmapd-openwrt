@@ -1,0 +1,9 @@
+Package: simet-lmapd
+Version: 0.1.2-1
+Depends: libc, libjson-c2, libevent2-6, check
+Source: package/utils/simet-lmapd
+SourceName: simet-lmapd
+Section: utils
+Architecture: x86_64
+Installed-Size: 80312
+Description:  SIMET LMAP daemon

@@ -1,0 +1,108 @@
+<%
+  local uci = require "uci".cursor()
+  action_names = {}
+  uci:foreach("lmapd", "action",
+  function(s)
+    table.insert(action_names, s['.name'])
+  end
+  )
+%>
+<%+header%>
+  <script type = "text/javascript">
+
+    function update_single_result(field){
+      var xhr = new XHR();
+      xhr.post('<%=url('admin/lmapd')%>/single_result', {token: '<%=token%>', result: String.format("%s", field.value)},
+      function(r, json){
+        if(r.responseText){
+          var resultsSection = document.getElementById('results-section');
+          var output = document.getElementById('result-data-output');
+          var metaOutput = document.getElementById('result-meta-output');
+          resultsSection.style.display = 'block';
+          output.style.display = 'block';
+          metaOutput.style.display = 'block';
+          output.innerHTML = String.format("<pre>%s</pre>",json.data);
+          metaOutput.innerHTML = String.format("<pre>%s</pre>",json.meta);
+        }
+      }
+    );
+
+    }
+
+    function update_results_for_action(field)
+    {
+      var xhr = new XHR();
+      xhr.post('<%=url('admin/lmapd')%>/results_get', {token: '<%=token%>', action: String.format("%s", field.value)},
+          function(x){
+            if(x.responseText){
+              if(x.responseText === "This action has no data."){
+                alert("This action has no data.");
+              }
+              else{
+                var pathsString = x.responseText;
+                var paths = pathsString.split('\n');
+                var resultSelect = document.getElementById('results-select');
+                while (resultSelect.firstChild) { // remove all children of the current results
+                  resultSelect.removeChild(resultSelect.firstChild);
+                }
+                paths.forEach(function(path){
+                  var resultSelect = document.getElementById('results-select');
+                  var opt = document.createElement('option');
+                  if(path != ""){
+                    opt.value = path;
+                    opt.innerHTML = path;
+                    resultSelect.appendChild(opt);
+                  }
+                });
+              }
+            }
+            else{
+              alert("Something went wrong, no response from server received");
+            }
+          }
+        );
+    }
+  </script>
+
+  <form method = "post" action = "<%=url('admin/lmapd/results')%>">
+    <div class = "table">
+      <h2 name="content">Measurement Results</h2>
+      <div class = "tr">
+        <div class = "td col-5">Action to view results for </div>
+        <div class = "td col-3">
+          <select name="actions">
+            <%
+            for _, action in pairs(action_names) do
+              %>
+              <option value ="<%=action%>"><%=action%></option>
+            <%
+            end
+            %>
+          </select>
+        </div>
+        <div class = "td col-3">
+          <input type="button" value="Choose" class="cbi-button cbi-button-apply" onclick="update_results_for_action(this.form.actions)"/>
+        </div>
+      </div>
+      <div class="tr">
+        <div class = "td col-5">Result to view</div>
+        <div class = "td col-3">
+        <select name="results" id = "results-select">
+          <option value=""></option>
+        </select>
+        </div>
+        <div class = "td col-3">
+          <input type = "button" value="Choose" class="cbi-button cbi-button-apply" onclick="update_single_result(this.form.results)"/>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class = "cbi-section" id = "results-section" style = "display:none">
+    <div class = "table">
+      <div class = "tr">
+        <div class = "td col-1"><span id = "result-data-output"></span></div>
+        <div class = "td col-1"><span id = "result-meta-output"></span></div>
+      </div>
+    </div>
+  </div>
+<%+footer%>

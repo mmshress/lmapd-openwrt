@@ -1,0 +1,116 @@
+<%
+luci.sys.call("lmapctl.sh running > /dev/null") 
+status_reachable = require "lmapd.status".get_lmapd_status()
+status_output = require "lmapd.status".read_status_json()
+if status_reachable and status_output ~= nil then
+  agent = status_output['ietf-lmap-control:lmap']['agent']
+  capabilities = status_output['ietf-lmap-control:lmap']['capabilities']
+  schedules = status_output['ietf-lmap-control:lmap']['schedules']['schedule']
+end
+%>
+<%+header%>
+<%
+if status_output == nil then %>
+<h2 name = "content">Overview</h2>
+<div class="cbi-section">
+  <span id="status-output"><pre>LMAPD isn't running.</pre></span>
+</div>
+<%
+else
+%>
+<h2 name = "content">Overview</h2>
+<div class = "cbi-section">
+  <div class="table">
+    <div class = "tr cbi-rowstyle-1">
+      <div class = "td">Agent ID</div>
+      <div class = "td"><%=agent['agent-id']%></div>
+    </div>
+    <div class = "tr cbi-rowstyle-2">
+      <div class = "td">Version</div>
+      <div class = "td"><%=capabilities['version']%></div>
+    </div>
+    <div class = "tr cbi-rowstyle-1">
+      <div class = "td">Last Started</div>
+      <div class = "td"><%=agent['last-started']%></div>
+    </div>
+    <%
+    if capabilities['tag'] ~= nil then
+    %>
+    <div class = "tr cbi-rowstyle-2">
+      <div class = "td">Tags</div>
+      <div class = "td"><%
+        for _, tag in pairs(capabilities['tag']) do
+          write(tag .. ", ")
+        end
+        %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<h3 name = "content">Schedule/Action Info</h3>
+<div class = "cbi-section">
+  <div class="table ">
+    <div class = "tr">
+      <div class = "td col-15 middle">Schedule/Action</div>
+      <div class = "td col-1 middle"> S </div>
+      <div class = "td col-3 middle"> IN </div>
+      <div class = "td col-3 middle"> SU </div>
+      <div class = "td col-3 middle"> OV </div>
+      <div class = "td col-3 middle"> ER </div>
+      <div class = "td col-5 middle"> STOR </div>
+      <div class = "td col-3 middle"> LST </div>
+      <div class = "td col-3 middle"> LFS </div>
+      <div class = "td col-10 middle"> L-INVOKE </div>
+      <div class = "td col-10 middle"> L-COMPLETE </div>
+      <div class = "td col-10 middle"> L-FAILURE </div>
+    </div>
+    <% for idx, schedule in pairs(schedules) do %>
+      <div class = "tr cbi-rowstyle-1">
+        <div class = "td col-15 middle"><%=schedule['name']%></div>
+        <div class = "td col-1"> <%=schedule['state']%> </div>
+        <div class = "td col-3 right"> <%=schedule['invocations']%> </div>
+        <div class = "td col-3 right"> <%=schedule['suppressions']%> </div>
+        <div class = "td col-3 right"> <%=schedule['overlaps']%> </div>
+        <div class = "td col-3 right"> <%=schedule['failures']%> </div>
+        <div class = "td col-5 right"> <%=schedule['storage']%> </div>
+        <div class = "td col-3"> </div>
+        <div class = "td col-3"> </div>
+        <div class = "td col-10"> <%=schedule['last-invocation']%> </div>
+        <div class = "td col-10"> </div>
+        <div class = "td col-10"> </div>
+      </div>
+      <%
+      if schedule['action'] ~= nil then
+        for idx2, action in pairs(schedule['action']) do %>
+        <div class = "tr cbi-rowstyle-2">
+          <div class = "td col-15 middle"><%=action['name']%></div>
+          <div class = "td col-1"> <%=action['state']%> </div>
+          <div class = "td col-3 right"> <%=action['invocations']%> </div>
+          <div class = "td col-3 right"> <%=action['suppressions']%> </div>
+          <div class = "td col-3 right"> <%=action['overlaps']%> </div>
+          <div class = "td col-3 right"> <%=action['failures']%> </div>
+          <div class = "td col-5 right"> <%=action['storage']%> </div>
+          <div class = "td col-3"> <%=action['last-status']%></div>
+          <div class = "td col-3"> <%=action['last-failed-status']%></div>
+          <div class = "td col-10"> <%=action['last-invocation']%> </div>
+          <div class = "td col-10"> <%=action['last-completion']%></div>
+          <div class = "td col-10"> <%=action['last-failed-completion']%></div>
+        </div>
+        <% end -- for loop
+      end -- if
+      %>
+    <% end %>
+  </div>
+</div>
+<h3 name = "content"> Table Legend </h3>
+<div class = "cbi-section">
+  S = Status, INV = Number of invocations, SU = Number of suppressions, OV = Number of overlaps,
+  ER = Number of failures, STOR = Amount of disk space consumed (in bytes), LST = Last Status, LFS = Status on last failure,
+  L-INVOKE = Last invocation time, L-COMPLETE = Last completion time, L-FAILURE = Last failure time
+</div>
+<%
+end
+%>
+<%+footer%>

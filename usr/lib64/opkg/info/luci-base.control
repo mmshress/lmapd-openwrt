@@ -1,0 +1,10 @@
+Package: luci-base
+Version: f138fc93-1
+Depends: libc, lua, luci-lib-nixio, luci-lib-ip, rpcd, libubus-lua, luci-lib-jsonc, liblucihttp-lua
+Source: feeds/luci/modules/luci-base
+SourceName: luci-base
+License: MIT
+Section: luci
+Architecture: x86_64
+Installed-Size: 130712
+Description:  LuCI core libraries

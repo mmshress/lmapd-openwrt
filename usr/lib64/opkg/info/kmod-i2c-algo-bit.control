@@ -1,0 +1,10 @@
+Package: kmod-i2c-algo-bit
+Version: 4.14.104-1
+Depends: kernel (=4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-i2c-core
+Source: package/kernel/linux
+SourceName: kmod-i2c-algo-bit
+License: GPL-2.0
+Section: kernel
+Architecture: x86_64
+Installed-Size: 190
+Description:  Kernel modules for I2C bit-banging interfaces

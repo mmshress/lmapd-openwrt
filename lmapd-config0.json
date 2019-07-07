@@ -1,0 +1,163 @@
+{
+  "ietf-lmap-control:lmap": {
+    "tasks":{
+      "task":[
+        {
+          "name" : "ping",
+          "function": [
+          ],
+          "program": "/bin/ping",
+          "option": [
+            {
+              "id": "count"
+            },
+            {
+              "id": "size_of_packet_64",
+              "name": "-s",
+              "value": "64"
+            },
+            {
+              "id": "interval_btn_packets_10",
+              "name": "-i",
+              "value": "10"
+            },
+            {
+              "id": "wait_for_5",
+              "name": "-w",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "name": "traceroute",
+          "function": [
+          ],
+          "program": "/usr/bin/traceroute",
+          "option": [
+            {
+              "id": "max_hops",
+              "name": "-m",
+              "value": "12"
+            },
+            {
+              "id": "numeric",
+              "name": "-n"
+            }
+          ]
+        },
+        {
+          "name" : "lmap_reporter",
+          "program" : "/bin/lmap_reporter",
+          "option": [
+          ]
+        }
+      ]
+  },
+  "agent": {
+    "agent-id": "cb9e3ce7-d0b0-4233-a54d-1ea1e1c7dba0",
+    "report-group-id": true,
+    "group-id": "42",
+    "report-agent-id": true
+  },
+  "events": {
+    "event": [
+      {
+        "name": "start_immediate",
+        "immediate": {}
+      },
+      {
+        "name": "every_minute",
+        "periodic":{
+          "interval" : 60
+        }
+      },
+      {
+        "name": "every_six_hours",
+        "random-spread": 3600000,
+        "calendar": {
+          "minute": [
+            0
+          ],
+          "month": [
+            "*"
+          ],
+          "day-of-week": [
+            "*"
+          ],
+          "second": [
+            0
+          ],
+          "hour": [
+            0,
+            12,
+            18,
+            6
+          ],
+          "day-of-month": [
+            "*"
+          ]
+        }
+      },
+      {
+        "name": "daily",
+        "calendar": {
+          "minute": [
+            0
+          ],
+          "month": [
+            "*"
+          ],
+          "day-of-week": [
+            "*"
+          ],
+          "second": [
+            0
+          ],
+          "hour": [
+            0
+          ],
+          "day-of-month": [
+            "*"
+          ]
+        }
+      }
+    ]
+  },
+  "schedules": {
+    "schedule": [
+      {
+        "start": "start_immediate",
+        "action": [
+          {
+            "name": "action_tr",
+            "destination": ["report_primary"],
+            "task": "traceroute",
+            "option":[
+              {
+                "id": "hostname",
+                "value": "google.com"
+              },
+              {
+                "id": "wait_for_5",
+                "name": "-w",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "name": "demo",
+        "execution-mode": "sequential"
+      },
+      {
+        "name": "report_primary",
+        "start": "every_minute",
+        "action": [{
+          "task": "lmap_reporter",
+          "name": "action_report"
+          }],
+          "execution-mode": "sequential"
+        }
+      ]
+    }
+  }
+}

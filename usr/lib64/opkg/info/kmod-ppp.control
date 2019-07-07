@@ -1,0 +1,10 @@
+Package: kmod-ppp
+Version: 4.14.104-1
+Depends: kernel (=4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-lib-crc-ccitt, kmod-slhc
+Source: package/kernel/linux
+SourceName: kmod-ppp
+License: GPL-2.0
+Section: kernel
+Architecture: x86_64
+Installed-Size: 20222
+Description:  Kernel modules for PPP support

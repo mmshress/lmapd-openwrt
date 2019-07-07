@@ -1,0 +1,10 @@
+Package: kmod-ipt-offload
+Version: 4.14.104-1
+Depends: kernel (=4.14.104-1-d8ac77275aabd304d39b54b8b6db56b1), kmod-ipt-core, kmod-nf-flow
+Source: package/kernel/linux
+SourceName: kmod-ipt-offload
+License: GPL-2.0
+Section: kernel
+Architecture: x86_64
+Installed-Size: 2863
+Description:  Netfilter routing/NAT offload support

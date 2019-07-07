@@ -1,0 +1,27 @@
+
+<%+header%>
+<h1>Agent Info</h1>
+<%
+  function read_config_json()
+    local config_file = nixio.open("/lmapd-config.json", "r")
+    local json_buffer = config_file:read(config_file:stat("size"))
+    local parsed_json = luci.jsonc.parse(json_buffer)
+    return parsed_json
+  end
+
+  function populate_agent_info()
+    parsed_json = read_config_json()
+    agent_node = parsed_json["ietf-lmap-control:lmap"]["agent"]
+  end
+
+  populate_agent_info()
+%>
+<div class = "cbi-section">
+  <div class = "table" width = "100%">
+    <div class = "tr"><div class = "td left" width = "33%"> Agent-ID </div><div class = "td left" width = "33%"><%=agent_node["agent-id"]%></div></div>
+    <div class = "tr"><div class = "td left" width = "33%"> Group-ID </div><div class = "td left" width = "33%"><%=agent_node["group-id"]%></div></div>
+    <div class = "tr"><div class = "td left" width = "33%"> Report-Agent-ID </div><div class = "td left" width = "33%"><%=agent_node["report-agent-id"]%></div></div>
+    <div class = "tr"><div class = "td left" width = "33%"> Report-Group-ID </div><div class = "td left" width = "33%"><%=agent_node["report-group-id"]%></div></div>
+  </div>
+</div>
+<%+footer%>
